@@ -5,7 +5,7 @@ const SCISSORS = 2;
 
 
 function getNumEquiv(choice) {
-    choice = String(choice).toLowerCase;
+    choice = String(choice).toLowerCase();
     
     switch (choice) {
         case "rock":
@@ -50,7 +50,7 @@ function getComputerChoice() {
     return Math.floor(Math.random() * 3);
 }
 
-function compare(userChoice, computerChoice) {
+function playRound(userChoice, computerChoice) {
     let userString = getStrEquiv(userChoice);
     let computerString = getStrEquiv(computerChoice);
 
@@ -65,12 +65,16 @@ function compare(userChoice, computerChoice) {
     }
 }
 
-function playRound() {
-    let userInput 
-    do {
-        userInput = getNumEquiv(prompt("Rock, Papaer, Scissors?", "scissors"));
-    } while (userInput == INVALID);
-    
-    let computerChoice = getComputerChoice();
+function play(userChoice) {
+    userChoice = getNumEquiv(userChoice);
 
+    if (userChoice == INVALID) {
+        console.log("please enter a valid input!");
+        return;
+    }
+
+    let computerChoice = getComputerChoice();
+    console.log(playRound(userChoice, computerChoice));
 }
+
+console.log(`%cPlease run play(<input>) where input is either "rock", "paper", or "scissors" to play!`, "font-size: 24px;");
