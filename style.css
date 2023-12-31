@@ -1,5 +1,8 @@
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 ul {
@@ -13,6 +16,7 @@ ul {
 
 li {
   width: 25%;
+  height: 250px;
 }
 
 .rpsButton {
@@ -21,3 +25,64 @@ li {
   width: 100%;
   height: 100%;
 }
+
+.result {
+  text-align: center;
+}
+
+.scoreboard {
+  background-color: red;
+  height: 400px;
+  padding: 20px;
+}
+
+.body {
+  height: 250px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.body > div { 
+  height: 100%;
+  width: 20%;
+  background-color: blue;
+  font-size: 40px;
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.body > .result {
+  width: 40%;
+}
+
+.scoreboard .header {
+  font-size: 30px;
+}
+
+.scoreboard .sides {
+  display: flex;
+  justify-content: space-between;
+}
+
+.scoreboard .title {
+  text-align: center;
+  padding: 0;
+}
+
+.resetHolder {
+  display: flex;
+  justify-content: center;
+}
+
+.reset {
+  height: 250px;
+  width: 50%;
+  visibility: hidden;
+  background-color: aqua;
+  font: 50px;
+  text-align: center;
+}
+

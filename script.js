@@ -57,10 +57,12 @@ function playRound(userChoice, computerChoice) {
     // With how the values are assigned to rock, paper, and scissors,
     // it is easy to check for who wins like this
     if (userChoice == (computerChoice + 1) % 3) {
+        playerCount++;
         return `You Win! ${userString} beats ${computerString}`;
     } else if (userChoice == computerChoice) {
         return `Tie! Both players played ${userString}`;
     } else {
+        computerCount++;
         return `You Lose! ${computerString} beats ${userString}`;
     }
 }
@@ -74,7 +76,6 @@ function play(userChoice) {
     }
 
     let computerChoice = getComputerChoice();
-    console.log(playRound(userChoice, computerChoice));
+    return playRound(userChoice, computerChoice);
 }
 
-console.log(`%cPlease run play(<input>) where input is either "rock", "paper", or "scissors" to play!`, "font-size: 24px;");
